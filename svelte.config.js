@@ -7,12 +7,17 @@ const config = {
 	// for more information about preprocessors
 	preprocess: preprocess({
 		scss: {
-			prependData: '@use "../styles/functions";@use "@unsass/breakpoint";'
+			prependData: '@use "src/styles/functions";@use "@unsass/breakpoint";'
 		}
 	}),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		alias: {
+			$components: 'src/lib/components',
+			$styles: 'src/styles',
+			$assets: 'src/assets'
+		}
 	}
 };
 
